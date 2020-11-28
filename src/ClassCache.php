@@ -21,11 +21,12 @@ final class ClassCache
 
     public function get(string $className, string $classParent): ?string
     {
-        if (!file_exists($this->getClassPath($className, $classParent))) {
+        $classPath = $this->getClassPath($className, $classParent);
+        if (!file_exists($classPath)) {
             return null;
         }
         try {
-            return file_get_contents($this->getClassPath($className, $classParent));
+            return file_get_contents($classPath);
         } catch (\Exception $e) {
             return null;
         }
