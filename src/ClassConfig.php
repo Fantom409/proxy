@@ -2,6 +2,7 @@
 
 namespace Yiisoft\Proxy;
 
+/** @internal */
 final class ClassConfig
 {
     public bool $isInterface;
